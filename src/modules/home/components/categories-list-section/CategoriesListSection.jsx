@@ -31,7 +31,12 @@ const renderCategories = (
                         title={category.name}
                         expandAll={expand}
                       >
-                        {renderCategories(children)}
+                        {renderCategories(
+                          children, handleContextMenuClick,
+                          currentCategoryId,
+                          addSubCategory, setAddSubCategory,
+                          editCategory, setEditCategory,
+                        )}
                       </ExpanderContainer>
                     </ContextMenuTrigger>
                     <ContextMenu id={category.id}>

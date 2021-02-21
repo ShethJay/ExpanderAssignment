@@ -61,7 +61,7 @@ export default (state = initialState, { type, payload }) => {
           arr.push({ ...item, name });
         } else if (item.subCategories) {
           // eslint-disable-next-line no-param-reassign
-          item.subCategories = editCategoryDetails(item.id, item.name, item.subCategories);
+          item.subCategories = editCategoryDetails(id, name, item.subCategories);
           arr.push(item);
         } else {
           arr.push(item);
@@ -109,7 +109,7 @@ export default (state = initialState, { type, payload }) => {
         } else if (item.subCategories) {
           // eslint-disable-next-line no-param-reassign
           item.subCategories = addSubCategory(
-            parentCategoryId, item.id, item.name, item.subCategories,
+            parentCategoryId, id, name, item.subCategories,
           );
           arr.push(item);
         } else {
